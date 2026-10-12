@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Contact(){return <main><section className="pagehead"><div className="wrap"><div className="eyebrow">CONTACT</div><h1>Let's talk about your business.</h1></div></section><section className="section"><div className="wrap contactline"><p>Email: <a href="mailto:Sam@GrandwellCapital.com">Sam@GrandwellCapital.com</a></p><p>Phone: <a href="tel:+13323450903">332-345-0903</a></p><Link className="btn" href="/apply">Send a Financing Inquiry</Link></div></section></main>}
