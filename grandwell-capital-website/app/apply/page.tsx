@@ -2,13 +2,11 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-
-export default function Apply() {
+import Script from 'next/script';export default function Apply() {
   const [status, setStatus] = useState('');
   const [busy, setBusy] = useState(false);
   const [step, setStep] = useState(1);
-
-  async function submit(e: FormEvent<HTMLFormElement>) {
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;  async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setBusy(true);
     setStatus('');
@@ -300,8 +298,19 @@ export default function Apply() {
                 style={{ position: 'absolute', left: '-9999px' }}
               />
             </div>
-
-            <div className="field full">
+<div className="field full">
+  <Script
+    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+    strategy="afterInteractive"
+  />
+  {turnstileSiteKey && (
+    <div
+      className="cf-turnstile"
+      data-sitekey={turnstileSiteKey}
+      data-theme="light"
+    />
+  )}
+</div>            <div className="field full">
               <button
                 className="btn"
                 type="submit"
