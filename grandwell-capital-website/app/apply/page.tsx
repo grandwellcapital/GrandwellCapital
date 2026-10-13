@@ -14,6 +14,19 @@ const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;  async func
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+const turnstileToken = String(
+  data['cf-turnstile-response'] || ''
+);
+
+if (!turnstileToken) {
+  setStatus('Please complete the security verification.');
+  setBusy(false);
+  return;
+}
+
+data.turnstileToken = turnstileToken;
+delete data['cf-turnstile-response'];
+
     try {
       const res = await fetch('/api/lead', {
         method: 'POST',
