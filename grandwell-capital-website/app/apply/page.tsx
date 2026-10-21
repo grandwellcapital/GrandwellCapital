@@ -1,13 +1,14 @@
-declare global {
-  interface Window {
-    turnstile?: { reset: () => void };
-  }
-}
 
 'use client';
 
 import { useState, type FormEvent } from 'react';
 import Script from 'next/script';
+
+declare global {
+  interface Window {
+    turnstile?: { reset: () => void };
+  }
+}
 
 export default function Apply() {
   const [status, setStatus] = useState('');
