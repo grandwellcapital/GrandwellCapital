@@ -1,18 +1,26 @@
+declare global {
+  interface Window {
+    turnstile?: { reset: () => void };
+  }
+}
 
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import Script from 'next/script';export default function Apply() {
+import Script from 'next/script';
+
+export default function Apply() {
   const [status, setStatus] = useState('');
   const [busy, setBusy] = useState(false);
-  const [step, setStep] = useState(1);
-const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;  async function submit(e: FormEvent<HTMLFormElement>) {
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+  async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setBusy(true);
     setStatus('');
 
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data: Record<string, FormDataEntryValue> = Object.fromEntries(new FormData(form).entries());
 
 const turnstileToken = String(
   data['cf-turnstile-response'] || ''
@@ -45,8 +53,9 @@ delete data['cf-turnstile-response'];
       );
 
       form.reset();
-      setStep(1);
+      if (window.turnstile) window.turnstile.reset();
     } catch (err) {
+      window.turnstile?.reset();
       setStatus(
         err instanceof Error ? err.message : 'Unable to send application.'
       );
@@ -71,15 +80,6 @@ delete data['cf-turnstile-response'];
             preliminary application inquiry, not a credit decision or
             approval. Do not enter Social Security numbers, EINs, bank
             account numbers, or upload financial documents here.
-          </p>
-
-          <p className="notice">
-            Section {step} of 3 —{' '}
-            {step === 1
-              ? 'Business details'
-              : step === 2
-              ? 'Owner and financing details'
-              : 'Review and submit'}
           </p>
 
           <form className="form" onSubmit={submit}>
@@ -312,18 +312,17 @@ delete data['cf-turnstile-response'];
               />
             </div>
 <div className="field full">
-  <Script
-    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-    strategy="afterInteractive"
-  />
-  {turnstileSiteKey && (
-    <div
-      className="cf-turnstile"
-      data-sitekey={turnstileSiteKey}
-      data-theme="light"
-    />
-  )}
-</div>            <div className="field full">
+              <Script
+                src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+                strategy="afterInteractive"
+              />
+              {turnstileSiteKey ? (
+                <div className="cf-turnstile" data-sitekey={turnstileSiteKey} data-theme="light" />
+              ) : (
+                <p role="alert" className="status">Security verification is not configured. Please contact us directly.</p>
+              )}
+            </div>
+            <div className="field full">
               <button
                 className="btn"
                 type="submit"
