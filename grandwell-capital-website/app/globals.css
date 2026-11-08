@@ -27,3 +27,63 @@ header{background:#fff;color:var(--ink);border-bottom:1px solid var(--line)}
 .final-cta{background:#f8fbff}
 .dark-outline{color:#155a9c;border-color:#155a9c}
 @media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:32px}.modern-hero{padding:55px 0}.modern-hero h1{letter-spacing:-1px}.hero-panel{padding:25px}.links .btn{padding:10px 12px}}
+
+
+/* Prestigious-inspired original Grandwell review design; no third-party content or assets copied. */
+.pc-hero{background:radial-gradient(circle at 83% 15%,#24537c 0,transparent 42%),linear-gradient(118deg,#091b30,#12375b);color:#fff;padding:102px 0 108px}
+.pc-hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(310px,.75fr);align-items:center;gap:70px}
+.pc-overline{font-size:12px;font-weight:800;letter-spacing:2.3px;color:#2b76b5}
+.pc-hero .pc-overline,.pc-cta .pc-overline{color:#8ac6ef}
+.pc-hero h1{font-size:clamp(43px,5.1vw,70px);line-height:1.1;letter-spacing:-2px;margin:22px 0 26px}
+.pc-hero h1 em{font-style:normal;color:#a6d7fa}
+.pc-hero-copy>p{font-size:18px;line-height:1.8;color:#d8e6f3;max-width:650px}
+.pc-primary{background:#2079bd!important;color:#fff!important;border:1px solid #2079bd!important}
+.pc-primary:hover{background:#145b94!important}
+.pc-light-outline{background:transparent!important;border:1px solid #aac8df!important;color:#fff!important}
+.pc-hero-points{display:flex;gap:19px;flex-wrap:wrap;margin-top:35px;color:#d4e5f4;font-size:13px}
+.pc-hero-card{background:#fff;color:#193650;padding:38px;border-radius:12px;box-shadow:0 20px 70px #06162755}
+.pc-hero-card .pc-overline{color:#2674b0}
+.pc-hero-card h2{font-size:32px;line-height:1.2;margin:17px 0}
+.pc-hero-card p{color:#61758a;font-size:16px;line-height:1.7}
+.pc-hero-card .btn{display:block;text-align:center;margin:25px 0 16px}
+.pc-hero-card small{display:block;color:#77889a;text-align:center}
+.pc-trust{border-bottom:1px solid #e4eaf0;background:#fff}
+.pc-trust-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;padding-bottom:24px;font-size:11px;letter-spacing:1.4px;color:#6b8196;font-weight:800}
+.pc-split{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.pc-intro h2,.pc-services h2,.pc-benefits h2,.pc-process h2{font-size:clamp(30px,3.5vw,44px);line-height:1.2;letter-spacing:-.8px;margin:15px 0 20px}
+.pc-intro p,.pc-benefits p{color:#63768a;line-height:1.85}
+.pc-text-link{color:#1765a2;font-weight:800;display:inline-block;margin-top:14px}
+.pc-intro-visual{background:linear-gradient(135deg,#123557,#081e36);min-height:340px;border-radius:14px;position:relative;display:flex;align-items:end;padding:35px;overflow:hidden}
+.pc-visual-mark{font-family:Georgia,serif;position:absolute;right:25px;top:-85px;font-size:400px;line-height:1;color:#ffffff0b}
+.pc-visual-content{position:relative;color:#fff}
+.pc-visual-content span{display:block;font-size:12px;letter-spacing:3px;color:#94c6e9;margin-bottom:18px}
+.pc-visual-content strong{font-size:26px;line-height:1.4}
+.pc-centered{text-align:center;max-width:730px;margin:0 auto 42px}
+.pc-centered p{color:#64778a;line-height:1.7}
+.pc-service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pc-service{background:white;border:1px solid #e1eaf2;border-radius:12px;padding:30px;box-shadow:0 7px 28px #133c6210}
+.pc-service-icon{height:52px;width:52px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#eaf4fc;color:#1765a2;font-size:26px;margin-bottom:20px}
+.pc-service h3{font-size:20px;margin:0 0 12px}
+.pc-service p{line-height:1.7;color:#687c8e;min-height:80px}
+.pc-service a{color:#1564a2;font-weight:800;font-size:14px}
+.pc-benefit-list{border:1px solid #e1eaf2;border-radius:12px;padding:18px 28px}
+.pc-benefit-list>div{display:flex;gap:22px;padding:21px 0;border-bottom:1px solid #e1eaf2}
+.pc-benefit-list>div:last-child{border-bottom:0}
+.pc-benefit-list strong{color:#1b74b3;font-size:22px}
+.pc-benefit-list b,.pc-benefit-list small{display:block}
+.pc-benefit-list b{font-size:18px;margin-bottom:7px}
+.pc-benefit-list small{font-size:14px;color:#687c8e;line-height:1.6}
+.pc-process{background:#f7fafc}
+.pc-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc-process-step{background:#fff;border:1px solid #e3ebf2;border-radius:12px;padding:26px}
+.pc-step-num{font-size:33px;font-weight:800;color:#2a7cb6}
+.pc-process-step h3{font-size:18px;line-height:1.3;margin:18px 0 12px}
+.pc-process-step p{font-size:14px;line-height:1.7;color:#687c8e}
+.pc-center-actions{text-align:center;margin-top:36px}
+.pc-cta{background:#102c4b;color:#fff;padding:65px 0}
+.pc-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.pc-cta h2{font-size:36px;margin:12px 0}
+.pc-cta p{color:#d5e4f2;line-height:1.7}
+.pc-cta .actions{margin-top:0}
+@media(max-width:850px){.pc-hero-grid,.pc-split{grid-template-columns:1fr;gap:35px}.pc-service-grid{grid-template-columns:repeat(2,1fr)}.pc-process-grid{grid-template-columns:repeat(2,1fr)}.pc-cta-inner{display:block}.pc-cta .actions{margin-top:24px}}
+@media(max-width:560px){.pc-hero{padding:65px 0}.pc-hero h1{letter-spacing:-1px}.pc-hero-card{padding:26px}.pc-service-grid,.pc-process-grid{grid-template-columns:1fr}.pc-trust-row{justify-content:center;text-align:center}.pc-cta h2{font-size:29px}}
