@@ -1,3 +1,28 @@
 import Link from 'next/link';
-const items=[['Working Capital','Capital options for operating expenses, payroll, inventory, and growth.'],['Merchant Cash Advance','An advance generally purchased against future business receivables; structure and costs vary by provider.'],['Business Term Loans','Financing with a defined repayment schedule, subject to eligibility.'],['Business Lines of Credit','A revolving or non-revolving credit facility, depending on provider terms.'],['Equipment Financing','Funding options for eligible business equipment.'],['Reverse Consolidation & Refinancing','Review current financing obligations and whether an alternative structure may be available.']];
-export default function Financing(){return <main><section className="pagehead"><div className="wrap"><div className="eyebrow">FINANCING SOLUTIONS</div><h1>Options for your next move.</h1></div></section><section className="section"><div className="wrap"><p className="sub">Grandwell Capital is a commercial financing brokerage. Product availability, costs, eligibility, and repayment terms depend on the financing provider and applicant.</p><div className="cards">{items.map(([a,b])=><div className="card" key={a}><h3>{a}</h3><p>{b}</p><Link href="/apply">Request information →</Link></div>)}</div></div></section></main>}
+import { applyUrl, photos, services } from '../site-data';
+
+export const metadata = { title: 'Financing Solutions | Grandwell Capital' };
+
+export default function Financing() {
+  return <main>
+    <section className="pagehead"><img src={photos.skyline} alt="" /><div className="wrap">
+      <div className="eyebrow">Our Services</div>
+      <h1>Financing options for your next move.</h1>
+      <p>Six funding programs, one dedicated advisor. Explore what each option is built for, then let us help you compare.</p>
+    </div></section>
+
+    {services.map((s, i) => <section key={s.slug} id={s.slug} className={`section${i % 2 ? ' soft' : ''}`}><div className="wrap split">
+      <div style={{ order: i % 2 ? 2 : 0 }}><img src={s.img} alt="" loading="lazy" style={{ borderRadius: 14, aspectRatio: '4/3', objectFit: 'cover', width: '100%', boxShadow: 'var(--shadow)' }} /></div>
+      <div>
+        <div className="eyebrow">{String(i + 1).padStart(2, '0')} · Program</div>
+        <h2>{s.name}</h2>
+        <p className="sub">{s.detail}</p>
+        <div className="actions" style={{ marginTop: 26 }}><a className="btn" href={applyUrl}>Apply Now →</a><Link className="btn btn-outline" href="/contact">Ask a Question</Link></div>
+      </div>
+    </div></section>)}
+
+    <section className="section"><div className="wrap">
+      <p className="notice">Grandwell Capital is a commercial financing brokerage. Product availability, costs, eligibility and repayment terms are set by the financing provider and depend on the applicant.</p>
+    </div></section>
+  </main>;
+}

@@ -1,35 +1,115 @@
 import Link from 'next/link';
+import { applyUrl, phone, photos, services } from './site-data';
 
-const services = [
-  {icon:'↗',name:'Working Capital',detail:'Flexible capital to support payroll, inventory, operations, and growth.'},
-  {icon:'▤',name:'Merchant Cash Advances',detail:'Explore revenue-based funding options for qualified businesses.'},
-  {icon:'↔',name:'Business Lines of Credit',detail:'Access financing options designed for changing cash-flow needs.'},
-  {icon:'▣',name:'Equipment Financing',detail:'Finance essential machinery, vehicles, and business equipment.'},
-  {icon:'◇',name:'SBA & Term Loan Options',detail:'Review longer-term financing paths and potential SBA programs.'},
-  {icon:'⊞',name:'Consolidation & Commercial',detail:'Discuss existing obligations, property, and larger capital needs.'},
+const heroPoints = [
+  { ico: '⚡', title: 'Fast Process', note: 'Short application, quick review' },
+  { ico: '◎', title: 'Dedicated Advisor', note: 'One point of contact' },
+  { ico: '⊞', title: 'Multiple Programs', note: 'Six ways to fund' },
+  { ico: '✓', title: 'Clear Terms', note: 'Know before you sign' },
 ];
-const steps=[
-  ['01','Tell Us About Your Business','Complete a short inquiry or funding application.'],
-  ['02','Speak With a Specialist','We review your needs and discuss potential financing options.'],
-  ['03','Review Your Options','Compare available terms and ask questions before moving forward.'],
-  ['04','Move Forward','If approved and accepted, complete the next steps toward funding.'],
+
+const welcome = [
+  ['Direct, personal support', 'Talk to a real person who knows your file.'],
+  ['Tailored solutions', 'Options matched to your revenue and goals.'],
+  ['Funding partner network', 'Access to multiple funding providers.'],
+  ['Speed & transparency', 'Straight answers on costs and timing.'],
 ];
-export default function Home(){
- return <main>
-  <section className="pc-hero"><div className="wrap pc-hero-grid">
-    <div className="pc-hero-copy"><div className="pc-overline">GRANDWELL CAPITAL · BUSINESS FINANCING</div>
-      <h1>Business funding built around <em>your next move.</em></h1>
-      <p>From everyday working capital to larger financing opportunities, we help business owners find a clear path forward with personal service and straightforward guidance.</p>
-      <div className="actions"><a className="btn pc-primary" href="https://apply.grandwellcapital.com">Apply for Funding →</a><Link className="btn pc-light-outline" href="/contact">Talk to a Specialist</Link></div>
-      <div className="pc-hero-points"><span>✓ Personal guidance</span><span>✓ Multiple funding solutions</span><span>✓ Clear next steps</span></div>
-    </div>
-    <aside className="pc-hero-card"><div className="pc-overline">FUNDING STARTS HERE</div><h2>Let's get your business moving.</h2><p>Tell us what you're looking to accomplish. We'll help you explore your next steps.</p><Link className="btn pc-primary" href="/contact">Request Funding Options →</Link><small>No obligation to submit an initial inquiry.</small></aside>
-  </div></section>
-  <section className="pc-trust"><div className="wrap pc-trust-row"><span>BUSINESS FINANCING</span><span>WORKING CAPITAL</span><span>GROWTH & EXPANSION</span><span>PERSONALIZED SUPPORT</span></div></section>
-  <section className="section pc-intro"><div className="wrap pc-split"><div><div className="pc-overline">WELCOME TO GRANDWELL CAPITAL</div><h2>Your financing partner for what comes next.</h2><p>Every business has a different story. We take time to understand your goals, cash flow, and financing needs before discussing available solutions.</p><p>Whether you're investing in growth, managing operations, or exploring ways to restructure existing obligations, our focus is on building a lasting business relationship.</p><Link className="pc-text-link" href="/about">Get to know Grandwell →</Link></div><div className="pc-intro-visual"><div className="pc-visual-mark">G</div><div className="pc-visual-content"><span>GRANDWELL CAPITAL</span><strong>Capital with purpose.<br/>Partnership with perspective.</strong></div></div></div></section>
-  <section className="section soft pc-services"><div className="wrap"><div className="pc-centered"><div className="pc-overline">OUR FINANCING SOLUTIONS</div><h2>Smart capital for every stage of business.</h2><p>Explore a range of business financing options with one dedicated point of contact.</p></div><div className="pc-service-grid">{services.map(s=><article className="pc-service" key={s.name}><div className="pc-service-icon" aria-hidden="true">{s.icon}</div><h3>{s.name}</h3><p>{s.detail}</p><Link href="/financing">Explore Options <span aria-hidden="true">→</span></Link></article>)}</div></div></section>
-  <section className="section pc-benefits"><div className="wrap pc-split"><div><div className="pc-overline">THE GRANDWELL DIFFERENCE</div><h2>More than a funding transaction.</h2><p className="sub">We aim to be a resource you can return to as your business evolves. You'll have someone to speak with, questions answered, and a clear explanation of potential next steps.</p><Link className="btn pc-primary" href="/contact">Connect With Our Team →</Link></div><div className="pc-benefit-list"><div><strong>01</strong><span><b>Relationship-focused</b><small>We learn about your business, not just your funding request.</small></span></div><div><strong>02</strong><span><b>Multiple solutions</b><small>Explore options for short- and longer-term needs.</small></span></div><div><strong>03</strong><span><b>Clear communication</b><small>Understand the process and available terms before deciding.</small></span></div></div></div></section>
-  <section className="section pc-process"><div className="wrap"><div className="pc-centered"><div className="pc-overline">HOW IT WORKS</div><h2>A simple path from inquiry to opportunity.</h2></div><div className="pc-process-grid">{steps.map(([n,title,detail])=><div className="pc-process-step" key={n}><div className="pc-step-num">{n}</div><h3>{title}</h3><p>{detail}</p></div>)}</div><div className="pc-center-actions"><a className="btn pc-primary" href="https://apply.grandwellcapital.com">Start Your Application →</a></div></div></section>
-  <section className="pc-cta"><div className="wrap pc-cta-inner"><div><div className="pc-overline">LET'S BUILD WHAT'S NEXT</div><h2>Ready to move your business forward?</h2><p>Start a conversation with Grandwell Capital about your financing goals.</p></div><div className="actions"><a className="btn pc-primary" href="https://apply.grandwellcapital.com">Apply Now →</a><Link className="btn pc-light-outline" href="/contact">Contact Us</Link></div></div></section>
- </main>;
+
+const features = [
+  ['◆', 'Competitive Options', 'We compare offers across providers so you can see what fits.'],
+  ['⏱', 'Quick & Easy', 'A short online application gets the process moving.'],
+  ['⇵', 'Flexible Structures', 'Daily, weekly or monthly repayment options are available.'],
+  ['🔒', 'Secure Process', 'Your information is protected and handled with care.'],
+  ['✎', 'Apply in Minutes', 'Start with basic details. No lengthy paperwork up front.'],
+  ['☎', 'Expert Consulting', 'Guidance on which product makes sense, and which does not.'],
+];
+
+const steps = [
+  ['01', 'Apply Online', 'Complete a short application with basic business details.'],
+  ['02', 'Get Reviewed', 'Your advisor reviews your file and matches you with providers.'],
+  ['03', 'Review Your Offer', 'Compare terms side by side and ask any questions.'],
+  ['04', 'Receive Funds', 'Accept the offer that works and complete funding steps.'],
+];
+
+const industries = [
+  { name: 'Restaurants & Food', note: 'Kitchens, delis, cafés', img: photos.restaurant },
+  { name: 'Retail & Storefronts', note: 'Shops and boutiques', img: photos.storefront },
+  { name: 'Construction & Trades', note: 'Contractors and equipment', img: photos.equipment },
+  { name: 'Service Businesses', note: 'Owners and operators', img: photos.owner },
+];
+
+export default function Home() {
+  return <main>
+    <section className="hero">
+      <img className="hero-bg" src={photos.bridge} alt="" />
+      <div className="wrap on-dark">
+        <div className="eyebrow">Business Funding · Brooklyn, NY</div>
+        <h1>Fast, flexible <em>business funding</em> built around your next move.</h1>
+        <p className="hero-lead">From working capital to equipment financing, Grandwell Capital connects business owners with the right funding, backed by a dedicated advisor at every step.</p>
+        <div className="actions">
+          <a className="btn" href={applyUrl}>Get My Capital →</a>
+          <a className="btn btn-ghost" href={phone.href}>☏ Call {phone.display}</a>
+        </div>
+        <div className="hero-points">{heroPoints.map(p => <div key={p.title}><span className="ico">{p.ico}</span><span><strong>{p.title}</strong><small>{p.note}</small></span></div>)}</div>
+      </div>
+    </section>
+
+    <section className="section"><div className="wrap split">
+      <div className="photo-stack">
+        <img className="main" src={photos.meeting} alt="Advisors meeting with a business owner" />
+        <img className="inset" src={photos.handshake} alt="Two people shaking hands after a meeting" />
+        <div className="photo-badge"><span>6</span>funding programs under one roof</div>
+      </div>
+      <div>
+        <div className="eyebrow">Welcome to Grandwell Capital</div>
+        <h2>Your partner for smarter business financing.</h2>
+        <p className="sub">Every business has a different story. We take the time to understand your cash flow, your goals and your timeline, then work with our network of funding providers to find options that fit.</p>
+        <div className="checks">{welcome.map(([t, d]) => <div key={t}><span className="tick">✓</span><span><b>{t}</b><small>{d}</small></span></div>)}</div>
+        <div className="actions"><Link className="btn btn-navy" href="/about">About Grandwell →</Link><Link className="btn btn-outline" href="/contact">Talk to an Advisor</Link></div>
+      </div>
+    </div></section>
+
+    <section className="section soft"><div className="wrap">
+      <div className="center"><div className="eyebrow">How We Help</div><h2>Funding solutions for every stage of business.</h2><p className="sub">Whether you need capital this week or a long-term growth plan, we have a program to discuss.</p></div>
+      <div className="service-grid">{services.map(s => <article className="service" key={s.slug}>
+        <div className="service-img"><img src={s.img} alt="" loading="lazy" /><span className="service-ico" aria-hidden="true">{s.icon}</span></div>
+        <div className="service-body"><h3>{s.name}</h3><p>{s.short}</p><Link className="text-link" href={`/financing#${s.slug}`}>View Details →</Link></div>
+      </article>)}</div>
+    </div></section>
+
+    <section className="section feature-band on-dark">
+      <img className="bg" src={photos.skyline} alt="" />
+      <div className="wrap">
+        <div className="center"><div className="eyebrow">Why Grandwell</div><h2>Built for business owners who move fast.</h2><p className="sub">A simpler, more transparent way to secure capital.</p></div>
+        <div className="feature-grid">{features.map(([i, t, d]) => <div className="feature" key={t}><div className="ico">{i}</div><h3>{t}</h3><p>{d}</p></div>)}</div>
+      </div>
+    </section>
+
+    <section className="stats"><div className="wrap">
+      <div className="stat"><strong>6</strong><span>Financing programs</span></div>
+      <div className="stat"><strong>1</strong><span>Dedicated advisor per client</span></div>
+      <div className="stat"><strong>5 min</strong><span>To start your application</span></div>
+      <div className="stat"><strong>NYC</strong><span>Based in Brooklyn</span></div>
+      <Link className="btn btn-navy" href="/contact">Talk to a Funding Specialist →</Link>
+    </div></section>
+
+    <section className="section"><div className="wrap">
+      <div className="center"><div className="eyebrow">4 Simple Steps</div><h2>From application to funding.</h2><p className="sub">A clear process, with your advisor guiding you the whole way.</p></div>
+      <div className="steps">{steps.map(([n, t, d]) => <div className="step" key={n}><div className="step-num">{n}</div><h3>{t}</h3><p>{d}</p></div>)}</div>
+      <div className="center-actions"><a className="btn" href={applyUrl}>Get Funding →</a><Link className="btn btn-outline" href="/contact">Help Me Find Funding</Link></div>
+    </div></section>
+
+    <section className="section soft"><div className="wrap">
+      <div className="center"><div className="eyebrow">Who We Fund</div><h2>Capital for the businesses that keep New York running.</h2></div>
+      <div className="industry-grid">{industries.map(i => <div className="industry" key={i.name}><img src={i.img} alt="" loading="lazy" /><div><h3>{i.name}</h3><small>{i.note}</small></div></div>)}</div>
+    </div></section>
+
+    <section className="cta">
+      <img src={photos.skyline} alt="" loading="lazy" />
+      <div className="wrap on-dark">
+        <div><div className="eyebrow">Let&apos;s Build What&apos;s Next</div><h2>Ready to unlock capital for your business?</h2><p>Start your application today or speak with an advisor about the best path forward.</p></div>
+        <div className="actions"><a className="btn" href={applyUrl}>Unlock Capital Now →</a><Link className="btn btn-ghost" href="/contact">Contact Us</Link></div>
+      </div>
+    </section>
+  </main>;
 }
