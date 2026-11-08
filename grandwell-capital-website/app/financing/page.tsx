@@ -5,7 +5,7 @@ export const metadata = { title: 'Financing Solutions | Grandwell Capital' };
 
 export default function Financing() {
   return <main>
-    <section className="pagehead"><img src={photos.skyline} alt="" /><div className="wrap">
+    <section className="pagehead"><img src={photos.empireNight} alt="" /><div className="wrap">
       <div className="eyebrow">Our Services</div>
       <h1>Financing options for your next move.</h1>
       <p>Six funding programs, one dedicated advisor. Explore what each option is built for, then let us help you compare.</p>
@@ -22,7 +22,7 @@ export default function Financing() {
     </div></section>)}
 
     <section className="section"><div className="wrap">
-      <p className="notice">Grandwell Capital is a commercial financing brokerage. Product availability, costs, eligibility and repayment terms are set by the financing provider and depend on the applicant.</p>
+      <p className="notice">Grandwell Capital provides financing directly and through its partner network. Program availability, costs, eligibility and repayment terms vary by program and applicant, and all financing is subject to underwriting approval.</p>
     </div></section>
   </main>;
 }

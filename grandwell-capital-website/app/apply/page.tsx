@@ -289,8 +289,8 @@ delete data['cf-turnstile-response'];
               </label>
 
               <p className="notice">
-                Grandwell Capital is a financing broker, not a
-                direct lender. Submission does not guarantee
+                All financing is subject to underwriting review
+                and approval. Submission does not guarantee
                 approval or constitute authorization for a
                 credit check. Additional disclosures and
                 authorization will be provided if you proceed.

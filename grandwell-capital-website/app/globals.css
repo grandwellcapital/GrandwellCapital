@@ -220,3 +220,9 @@ textarea{min-height:120px}
   .float-cta .hide-sm{display:none}
   .site-footer{padding-bottom:80px}
 }
+
+/* Inline SVG icon alignment */
+.topbar a,.topbar span{display:inline-flex;align-items:center;gap:7px}
+.topbar svg{color:var(--gold)}
+.hero-points .ico svg,.service-ico svg,.feature .ico svg{display:block}
+.feature .ico{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:12px;background:rgba(201,164,92,.12)}
