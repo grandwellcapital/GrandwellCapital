@@ -1,1 +1,29 @@
 :root{--navy:#10233c;--gold:#c7a66c;--ink:#14243a;--muted:#637184;--line:#dce2e9}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}a{text-decoration:none;color:inherit}.wrap{max-width:1160px;margin:auto;padding:0 24px}header{background:var(--navy);color:white;border-bottom:1px solid #304158}.nav{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:82px}.brand{font-weight:700;letter-spacing:2px;color:var(--gold);font-size:20px}.brand small{display:block;font-size:10px;letter-spacing:5px;margin-top:5px}.links{display:flex;gap:25px;align-items:center;font-size:14px}.btn{display:inline-block;background:var(--gold);color:#10233c;padding:15px 24px;border:0;border-radius:4px;font-weight:700;cursor:pointer}.btn-outline{background:transparent;border:1px solid #c7a66c;color:#fff}.hero{background:linear-gradient(120deg,#10233c,#203e60);color:#fff;padding:105px 0}.eyebrow{color:var(--gold);letter-spacing:3px;font-size:12px;font-weight:bold}h1{font-size:clamp(39px,5vw,64px);line-height:1.12;max-width:770px;margin:22px 0}h2{font-size:34px;margin:0 0 18px}.hero p{font-size:19px;line-height:1.7;max-width:630px;color:#d9e0e9}.actions{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}.section{padding:75px 0}.sub{color:var(--muted);line-height:1.7;max-width:750px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.card{padding:28px;border:1px solid var(--line);border-radius:8px;background:#fff}.card h3{margin-top:0}.card p{color:var(--muted);line-height:1.6}.soft{background:#f4f6f8}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:35px}.num{color:#b28b4b;font-size:27px;font-weight:bold}footer{background:#0d1d32;color:#d2dbe5;padding:36px 0;font-size:14px}footer p{line-height:1.7}.pagehead{background:#10233c;color:white;padding:72px 0}.pagehead h1{font-size:45px}.form{max-width:730px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}label{font-size:14px;font-weight:600}input,select,textarea{padding:13px;border:1px solid #bfc8d3;border-radius:4px;font:inherit;width:100%;background:#fff}textarea{min-height:110px}.notice{font-size:13px;line-height:1.6;color:var(--muted)}.status{padding:12px;border-radius:4px;background:#edf3f9}.contactline{font-size:18px;line-height:2}.mobile-note{display:none}@media(max-width:760px){.links{gap:12px;flex-wrap:wrap;justify-content:flex-end;font-size:12px}.nav{align-items:flex-start;padding-top:18px;padding-bottom:18px}.brand{font-size:16px}.cards,.steps{grid-template-columns:1fr}.hero{padding:70px 0}.section{padding:50px 0}.form{grid-template-columns:1fr}.field{grid-column:1/-1}}
+
+/* Modern Finance design review */
+:root{--navy:#102b4d;--gold:#2563a6;--ink:#142b46;--muted:#5c6e83;--line:#e2eaf2}
+body{font-family:Arial,Helvetica,sans-serif;background:#fff}
+header{background:#fff;color:var(--ink);border-bottom:1px solid var(--line)}
+.brand{color:#13375d}
+.brand small{color:#4776a3}
+.links .btn,.btn{background:#155a9c;color:#fff;border-radius:8px}
+.btn:hover{background:#0d477d}
+.btn-outline{background:transparent;border:1px solid #9bb5d0;color:#17446e}
+.eyebrow{color:#2771b4;letter-spacing:2px}
+.modern-hero{background:linear-gradient(115deg,#f7fbff,#eaf3fb);color:var(--ink);padding:92px 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr);align-items:center;gap:60px}
+.modern-hero h1{font-size:clamp(44px,5vw,72px);letter-spacing:-2px;max-width:720px}
+.modern-hero p{color:#536b84;max-width:650px}
+.hero-fine{font-size:13px!important;margin-top:24px}
+.hero-panel{background:#fff;border:1px solid #d9e7f3;border-radius:18px;padding:36px;box-shadow:0 20px 60px rgba(20,62,104,.09)}
+.hero-panel h2{font-size:30px;line-height:1.2;margin:16px 0}
+.hero-panel p{font-size:16px;line-height:1.6}
+.hero-panel span{display:block;font-size:12px;color:#708299;margin-top:18px}
+.panel-kicker{font-size:12px;letter-spacing:2px;font-weight:700;color:#2873b2}
+.modern-cards .card{border-radius:14px;box-shadow:0 8px 26px rgba(17,52,84,.04)}
+.modern-cards .card a{color:#1662a5;font-weight:700}
+.card-accent{height:4px;width:42px;border-radius:8px;background:#3a8bc9;margin-bottom:25px}
+.soft{background:#f4f8fc}
+.final-cta{background:#f8fbff}
+.dark-outline{color:#155a9c;border-color:#155a9c}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr;gap:32px}.modern-hero{padding:55px 0}.modern-hero h1{letter-spacing:-1px}.hero-panel{padding:25px}.links .btn{padding:10px 12px}}
