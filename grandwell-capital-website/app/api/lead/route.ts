@@ -91,9 +91,7 @@ export async function POST(request: Request) {
     const from =
       process.env.LEAD_FROM_EMAIL ??
       process.env.RESEND_FROM_EMAIL;
-    const to =
-      process.env.LEAD_TO_EMAIL ??
-      process.env.LEAD_NOTIFICATION_EMAIL;
+    const to = 'Sam@GrandwellCapital.com';
 
     if (!key || !from || !to) {
       return NextResponse.json(
