@@ -1,11 +1,8 @@
 import './globals.css';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
 import { applyUrl, email, phone, services } from './site-data';
 
-const display = Playfair_Display({ subsets: ['latin'], weight: ['600', '700'], variable: '--font-display' });
-const body = Inter({ subsets: ['latin'], variable: '--font-body' });
 
 export const metadata: Metadata = {
   title: 'Grandwell Capital | Business Funding & Financing Solutions',
@@ -17,7 +14,7 @@ function Brand() {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`${display.variable} ${body.variable}`}><body>
+  return <html lang="en"><head><link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" /></head><body>
     <div className="topbar"><div className="wrap">
       <div className="topbar-items"><a href={`mailto:${email}`}>✉ {email}</a><a href={phone.href}>☏ {phone.display}</a></div>
       <div className="topbar-items hide-sm"><span>Brooklyn, New York</span><span>Business financing brokerage</span></div>
