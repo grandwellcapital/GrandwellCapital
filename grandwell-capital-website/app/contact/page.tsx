@@ -53,7 +53,6 @@ export default function Contact() {
         <div className="field full"><Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" />{siteKey ? <div className="cf-turnstile" data-sitekey={siteKey} data-theme="light" /> : <p role="alert">Security verification is not configured.</p>}</div>
         <div className="field full"><button className="btn" type="submit" disabled={busy || !siteKey}>{busy?'Sending...':'Send Inquiry →'}</button>{status && <p role="status" className="status">{status}</p>}</div>
       </form>
-      <p className="sub">Prefer to contact us directly? <a href="mailto:submissions@grandwellcapital.com">submissions@grandwellcapital.com</a> · <a href="tel:+13323450903">332-345-0903</a></p>
       <p className="notice">All financing is subject to underwriting review and approval. Submission does not guarantee approval or financing.</p>
     </div></section>
   </main>;
