@@ -91,7 +91,7 @@ export async function POST(request: Request) {
     const from =
       process.env.LEAD_FROM_EMAIL ??
       process.env.RESEND_FROM_EMAIL;
-    const to = 'submissions@grandwellcapital.com';
+    const to = 'Sam@GrandwellCapital.com';
 
     if (!key || !from || !to) {
       return NextResponse.json(

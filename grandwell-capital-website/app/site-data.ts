@@ -17,7 +17,7 @@ export const photos = {
 
 export const applyUrl = 'https://apply.grandwellcapital.com';
 export const phone = { display: '332-345-0903', href: 'tel:+13323450903' };
-export const email = 'submissions@grandwellcapital.com';
+export const email = 'apply@grandwellcapital.com';
 export const location = 'New York, New York';
 
 export const services = [
