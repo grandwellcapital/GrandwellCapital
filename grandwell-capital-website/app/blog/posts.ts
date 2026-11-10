@@ -164,7 +164,7 @@ export const posts: Post[] = [
       ] },
       { h: 'Apply in minutes' },
       { p: 'Grandwell Capital\'s secure online application collects your business details and lets you upload statements directly. A specialist reviews your file and contacts you with options.' },
-      { p: 'Questions about documents? Email submissions@grandwellcapital.com.' },
+      { p: 'Questions about documents? Email apply@grandwellcapital.com.' },
     ],
   },
   {
