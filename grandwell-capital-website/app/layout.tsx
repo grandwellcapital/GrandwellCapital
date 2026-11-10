@@ -6,6 +6,7 @@ import { Icon } from './icons';
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://grandwellcapital.com'),
   title: 'Grandwell Capital | Business Funding & Financing Solutions',
   description: 'Grandwell Capital helps business owners access working capital, lines of credit, equipment financing, term loans and more with personal, New York-based guidance.',
 };
@@ -28,11 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="dropdown"><span tabIndex={0}>Services ▾</span><div className="dropdown-panel">
           {services.map(s => <Link key={s.slug} href={`/financing#${s.slug}`}>{s.name}</Link>)}
         </div></div>
+        <Link href="/blog">Blog</Link>
         <Link href="/contact">Contact Us</Link>
         <a className="btn" href={applyUrl}>Apply Now</a>
       </nav>
       <details className="mobile-menu"><summary>Menu ☰</summary><nav aria-label="Mobile navigation">
-        <Link href="/">Home</Link><Link href="/about">About</Link><Link href="/financing">Services</Link><Link href="/contact">Contact Us</Link>
+        <Link href="/">Home</Link><Link href="/about">About</Link><Link href="/financing">Services</Link><Link href="/blog">Blog</Link><Link href="/contact">Contact Us</Link>
         <a className="btn" href={applyUrl}>Apply Now</a>
       </nav></details>
     </div></header>
@@ -42,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <footer className="site-footer"><div className="wrap">
       <div className="footer-grid">
         <div><Brand /><p>Grandwell Capital is a New York business funding company providing capital directly and through trusted partners, so owners can grow, operate and seize opportunity.</p><a className="btn" href={applyUrl}>Get Funded →</a></div>
-        <div><h4>Quick Links</h4><ul><li><Link href="/">Home</Link></li><li><Link href="/about">About Us</Link></li><li><Link href="/financing">Services</Link></li><li><Link href="/contact">Contact</Link></li><li><a href={applyUrl}>Apply Now</a></li></ul></div>
+        <div><h4>Quick Links</h4><ul><li><Link href="/">Home</Link></li><li><Link href="/about">About Us</Link></li><li><Link href="/financing">Services</Link></li><li><Link href="/blog">Blog</Link></li><li><Link href="/contact">Contact</Link></li><li><a href={applyUrl}>Apply Now</a></li></ul></div>
         <div><h4>Services</h4><ul>{services.map(s => <li key={s.slug}><Link href={`/financing#${s.slug}`}>{s.name}</Link></li>)}</ul></div>
         <div><h4>Contact</h4><ul><li>{location}</li><li><a href={`mailto:${email}`}>{email}</a></li><li><a href={phone.href}>{phone.display}</a></li></ul></div>
       </div>
