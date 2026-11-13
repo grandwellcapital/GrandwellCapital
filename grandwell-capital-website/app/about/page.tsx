@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { applyUrl, photos } from '../site-data';
+import { applyUrl, brand, photos } from '../site-data';
 
 export const metadata = { title: 'About | Grandwell Capital' };
 
@@ -19,8 +19,8 @@ export default function About() {
 
     <section className="section"><div className="wrap split">
       <div className="photo-stack">
-        <img className="main" src={photos.handshake} alt="Two people shaking hands" />
-        <img className="inset" src={photos.owner} alt="Small business owner at her counter" />
+        <img className="main" src={brand.team} alt="The Grandwell Capital team at our office" />
+        <img className="inset" src={brand.office} alt="Inside the Grandwell Capital office" />
       </div>
       <div>
         <div className="eyebrow">Who We Are</div>

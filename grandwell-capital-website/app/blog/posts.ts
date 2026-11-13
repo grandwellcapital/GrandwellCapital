@@ -1,4 +1,4 @@
-import { photos } from '../site-data';
+import { brand } from '../site-data';
 
 // Blog content. Each post is a list of simple blocks so no markdown library is needed.
 // Inline **bold** is supported in paragraphs and list items.
@@ -17,7 +17,8 @@ export type Post = {
   date: string; // YYYY-MM-DD
   readMinutes: number;
   category: string;
-  img: string;
+  img: string; // page header photo
+  cover: string; // branded cover image (cards + social previews)
   cta: string;
   body: Block[];
 };
@@ -27,7 +28,7 @@ export const posts: Post[] = [
     slug: 'what-is-working-capital',
     title: 'What Is Working Capital? A Plain-English Guide for Small Business Owners',
     description: 'Working capital keeps your business running between paydays. Learn what it is, how to calculate it, and how to get more when cash runs tight.',
-    date: '2026-11-08', readMinutes: 4, category: 'Working Capital', img: photos.owner,
+    date: '2026-11-08', readMinutes: 4, category: 'Working Capital', img: brand.consult, cover: '/blog/what-is-working-capital.jpg',
     cta: 'Apply for working capital',
     body: [
       { p: 'Every business owner has felt it. Sales are good, customers are happy, but the bank account says otherwise. Payroll is Friday, a supplier wants payment upfront, and your biggest client pays in 60 days.' },
@@ -63,7 +64,7 @@ export const posts: Post[] = [
     slug: 'alternatives-to-bank-loans',
     title: 'The Bank Said No. Now What? 5 Alternatives to a Bank Loan',
     description: 'Turned down for a bank loan? You still have options. Here are five ways small businesses get funded when the bank says no.',
-    date: '2026-11-08', readMinutes: 4, category: 'Business Funding', img: photos.storefront,
+    date: '2026-11-08', readMinutes: 4, category: 'Business Funding', img: brand.team, cover: '/blog/alternatives-to-bank-loans.jpg',
     cta: 'See what your business qualifies for',
     body: [
       { p: 'Getting turned down by your bank stings. You have been a customer for years, your business is running, and still the answer is no.' },
@@ -94,7 +95,7 @@ export const posts: Post[] = [
     slug: 'mca-vs-term-loan-vs-line-of-credit',
     title: 'Merchant Cash Advance vs. Term Loan vs. Line of Credit: Which Is Right for You?',
     description: 'MCA, term loan or line of credit? Compare how each works, who it fits, and what to watch for before you choose small business funding.',
-    date: '2026-11-08', readMinutes: 5, category: 'Business Funding', img: photos.meeting,
+    date: '2026-11-08', readMinutes: 5, category: 'Business Funding', img: brand.consult, cover: '/blog/mca-vs-term-loan-vs-line-of-credit.jpg',
     cta: 'Compare your funding options',
     body: [
       { p: 'Three of the most common ways small businesses get funded are a merchant cash advance, a term loan and a business line of credit. They solve different problems. Picking the wrong one can cost you, so here is how they compare.' },
@@ -127,7 +128,7 @@ export const posts: Post[] = [
     slug: 'business-funding-application-checklist',
     title: 'What You Need to Apply for Business Funding: The Complete Checklist',
     description: 'Get funded faster by having the right documents ready. Here is the checklist of what lenders and funders ask for when you apply.',
-    date: '2026-11-08', readMinutes: 4, category: 'Applying', img: photos.handshake,
+    date: '2026-11-08', readMinutes: 4, category: 'Applying', img: brand.office, cover: '/blog/business-funding-application-checklist.jpg',
     cta: 'Start your application',
     body: [
       { p: 'The biggest delay in business funding usually isn\'t the funder. It is waiting on paperwork. Have these items ready and your application can move in days instead of weeks.' },
@@ -171,7 +172,7 @@ export const posts: Post[] = [
     slug: 'equipment-financing-guide',
     title: 'Equipment Financing: How to Get the Tools Your Business Needs Without Draining Cash',
     description: 'Need a truck, kitchen equipment or machinery? Equipment financing lets you buy now and pay over time while keeping your cash free.',
-    date: '2026-11-08', readMinutes: 4, category: 'Equipment Financing', img: photos.equipment,
+    date: '2026-11-08', readMinutes: 4, category: 'Equipment Financing', img: brand.office, cover: '/blog/equipment-financing-guide.jpg',
     cta: 'Apply for equipment financing',
     body: [
       { p: 'A new delivery truck, a commercial oven, a CNC machine, a dental chair. The right equipment can double what your business produces. The price tag can also wipe out your bank account.' },
@@ -198,7 +199,7 @@ export const posts: Post[] = [
     slug: 'business-debt-consolidation',
     title: 'Juggling Multiple Advances? How Business Debt Consolidation Can Help',
     description: 'Multiple daily payments eating your cash flow? Learn how business debt consolidation can combine them into one payment that\'s easier to manage.',
-    date: '2026-11-08', readMinutes: 4, category: 'Debt Consolidation', img: photos.restaurant,
+    date: '2026-11-08', readMinutes: 4, category: 'Debt Consolidation', img: brand.consult, cover: '/blog/business-debt-consolidation.jpg',
     cta: 'Get a free consolidation review',
     body: [
       { p: 'It often starts with one advance to cover a slow month. Then a second to handle a big order. Before long, three or four daily payments are pulling from your account, and there is barely enough left to run the business.' },
@@ -221,7 +222,7 @@ export const posts: Post[] = [
     slug: 'how-fast-can-you-get-business-funding',
     title: 'How Fast Can You Get Business Funding? A Realistic Timeline',
     description: 'Need business funding fast? Here\'s how long bank loans, alternative loans and merchant cash advances usually take, and how to speed things up.',
-    date: '2026-11-08', readMinutes: 4, category: 'Applying', img: photos.trucks,
+    date: '2026-11-08', readMinutes: 4, category: 'Applying', img: brand.team, cover: '/blog/how-fast-can-you-get-business-funding.jpg',
     cta: 'Apply now and get a fast decision',
     body: [
       { p: 'When a business needs money, it usually needs it soon. A broken cooler, a big order, a slow month before the busy season. So the first question owners ask is: how fast?' },
@@ -259,7 +260,7 @@ export const posts: Post[] = [
     slug: 'ways-to-use-working-capital-to-grow',
     title: '7 Smart Ways to Use Working Capital to Grow Your Business',
     description: 'Working capital isn\'t just for emergencies. Here are seven ways small businesses use funding to grow revenue, from holiday inventory to hiring.',
-    date: '2026-11-08', readMinutes: 4, category: 'Growth', img: photos.bridge,
+    date: '2026-11-08', readMinutes: 4, category: 'Growth', img: brand.office, cover: '/blog/ways-to-use-working-capital-to-grow.jpg',
     cta: 'Apply today at Grandwell Capital',
     body: [
       { p: 'Most people think of business funding as a lifeline for tough times. The smartest owners use it differently: as a tool to grab opportunities they would otherwise miss.' },

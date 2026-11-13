@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} | Grandwell Capital`,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { type: 'article', title: post.title, description: post.description, url: `/blog/${post.slug}`, images: [post.img], publishedTime: post.date, siteName: 'Grandwell Capital' },
-    twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [post.img] },
+    openGraph: { type: 'article', title: post.title, description: post.description, url: `/blog/${post.slug}`, images: [{ url: post.cover, width: 1200, height: 630, alt: post.title }], publishedTime: post.date, siteName: 'Grandwell Capital' },
+    twitter: { card: 'summary_large_image', title: post.title, description: post.description, images: [post.cover] },
   };
 }
 
@@ -49,7 +49,7 @@ export default async function Article({ params }: Props) {
   const more = posts.filter(p => p.slug !== post.slug).slice(0, 3);
   const jsonLd = {
     '@context': 'https://schema.org', '@type': 'BlogPosting',
-    headline: post.title, description: post.description, image: post.img,
+    headline: post.title, description: post.description, image: `https://grandwellcapital.com${post.cover}`,
     datePublished: post.date, dateModified: post.date,
     author: { '@type': 'Organization', name: 'Grandwell Capital' },
     publisher: { '@type': 'Organization', name: 'Grandwell Capital' },
@@ -66,6 +66,7 @@ export default async function Article({ params }: Props) {
 
     <section className="section"><div className="wrap article-wrap">
       <article className="article">
+        <img className="article-cover" src={post.cover} alt={post.title} />
         {post.body.map((b, i) => <Render key={i} block={b} />)}
         <div className="article-cta">
           <div><strong>Ready to talk funding?</strong><span>No cost to apply. A Grandwell specialist will walk you through your options.</span></div>
@@ -79,7 +80,7 @@ export default async function Article({ params }: Props) {
       <div className="center"><div className="eyebrow">Keep Reading</div><h2>More from the blog</h2></div>
       <div className="service-grid blog-grid">
         {more.map(p => <Link key={p.slug} href={`/blog/${p.slug}`} className="service blog-card">
-          <div className="service-img"><img src={p.img} alt="" loading="lazy" /></div>
+          <div className="service-img"><img src={p.cover} alt={p.title} loading="lazy" /></div>
           <div className="service-body">
             <div className="blog-meta">{p.category} · {p.readMinutes} min read</div>
             <h3>{p.title}</h3>

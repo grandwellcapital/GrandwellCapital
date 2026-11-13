@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { applyUrl, phone, photos, services } from './site-data';
+import { applyUrl, phone, photos, services, brand } from './site-data';
 import { Icon } from './icons';
 
 const heroPoints = [
@@ -57,8 +57,8 @@ export default function Home() {
 
     <section className="section"><div className="wrap split">
       <div className="photo-stack">
-        <img className="main" src={photos.meeting} alt="Advisors meeting with a business owner" />
-        <img className="inset" src={photos.handshake} alt="Two people shaking hands after a meeting" />
+        <img className="main" src={brand.consult} alt="A Grandwell advisor meeting with a business owner at our office" />
+        <img className="inset" src={brand.team} alt="The Grandwell Capital team" />
         <div className="photo-badge"><span>6</span>funding programs under one roof</div>
       </div>
       <div>

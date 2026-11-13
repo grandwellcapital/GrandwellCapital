@@ -251,3 +251,5 @@ textarea{min-height:120px}
 .article-cta strong{display:block;font-family:var(--font-serif);font-size:22px}
 .article-cta span{color:#c9d4e2;font-size:15px}
 @media(max-width:640px){.article{font-size:17px}.article-cta{padding:22px}}
+.article-cover{width:100%;border-radius:var(--radius);box-shadow:var(--shadow);margin:0 0 34px}
+.blog-card .service-img{aspect-ratio:1200/630}

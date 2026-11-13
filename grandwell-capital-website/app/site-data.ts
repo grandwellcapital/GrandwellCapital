@@ -15,6 +15,16 @@ export const photos = {
   equipment: u('photo-1768085091650-e8e89ef57b76'), // excavator — Unsplash
 };
 
+// Grandwell's own photos and brand images, served from /public/brand.
+export const brand = {
+  team: '/brand/team.jpg', // Grandwell team in the office
+  consult: '/brand/consult.jpg', // client consultation at the office
+  office: '/brand/office.jpg', // office interior
+  banner: '/brand/banner1.jpg',
+  banner2: '/brand/banner2.jpg',
+  logo: '/brand/logo.png',
+};
+
 export const applyUrl = 'https://apply.grandwellcapital.com';
 export const phone = { display: '332-345-0903', href: 'tel:+13323450903' };
 export const email = 'apply@grandwellcapital.com';
